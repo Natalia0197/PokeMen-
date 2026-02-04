@@ -34,7 +34,8 @@ export default async function PokesLayout({
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex flex-1">
-        <nav className="w-64 bg-gray-800/75 p-4 border-r border-gray-700">4
+        <nav className="w-64 bg-gray-800/75 p-4 border-r border-gray-700"> 
+          <h1>MENU</h1>
           <div className="flex flex-col gap-2">
             {pokemons.map(({ id, name }) => (
               <Link
