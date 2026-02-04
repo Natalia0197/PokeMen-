@@ -6,7 +6,7 @@ type PokemonApiResponse = {
   name: string;
 };
 
-// 👇 Función para obtener solo el nombre del Pokémon
+// Obtener solo el nombre del Pokémon
 async function getPokemonName(id: number): Promise<string | null> {
   const res = await fetch(
     `https://pokeapi.co/api/v2/pokemon/${id}`,
@@ -24,7 +24,6 @@ export default async function PokesLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // 👇 Obtener nombres de los pokémon
   const pokemons = await Promise.all(
     ids.map(async (id) => ({
       id,
