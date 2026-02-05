@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const ids = [1, 4, 7, 25, 133];
+const ids = [1, 4, 7, 25, 133, 136, 152, 176];
 
 type PokemonApiResponse = {
   name: string;
@@ -35,7 +35,7 @@ export default async function PokesLayout({
     <div className="min-h-screen flex flex-col">
       <div className="flex flex-1">
         <nav className="w-64 bg-gray-800/75 p-4 border-r border-gray-700"> 
-          <h1>MENU</h1>
+          <h1 className="text-2xl font-bold mb-4">MENU</h1>
           <div className="flex flex-col gap-2">
             {pokemons.map(({ id, name }) => (
               <Link

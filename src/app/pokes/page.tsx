@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from "next/link";
 
-const ids = [1, 4, 7, 25, 133];
+const ids = [1, 4, 7, 25, 133, 136, 152, 176];
 
 type PokemonApiResponse = {
     name: string;

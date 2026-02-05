@@ -16,6 +16,16 @@ type PokemonApiResponse = {
       };
     };
   };
+  abilities: Array<{
+    ability: {
+      name: string;
+    };
+  }>;
+  types: Array<{
+    type: {
+      name: string;
+    };
+  }>;
 };
 
 export default async function PokemonPage(props: PokemonPageProps) {
@@ -33,6 +43,8 @@ export default async function PokemonPage(props: PokemonPageProps) {
   }
 
   const imageUrl = pokemon.sprites.other["official-artwork"].front_default;
+  const types = pokemon.types.map(t => t.type.name).join(", ");
+  const abilities = pokemon.abilities.map(a => a.ability.name).join(", ");
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-amber-500/10">
@@ -56,6 +68,17 @@ export default async function PokemonPage(props: PokemonPageProps) {
               <p className="block font-sans text-base antialiased font-bold leading-relaxed text-blue-gray-900">
                 #{id.padStart(3, '0')}
               </p>
+            </div>
+            
+            <div className="mt-4 space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-gray-700">Tipo:</span>
+                <span className="capitalize text-gray-600">{types}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-gray-700">Habilidades:</span>
+                <span className="capitalize text-gray-600">{abilities}</span>
+              </div>
             </div>
           </div>
         </div>
